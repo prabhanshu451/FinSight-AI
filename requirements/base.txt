@@ -1,0 +1,14 @@
+Django>=4.2
+djangorestframework
+psycopg2-binary
+uvicorn
+fastapi
+celery[redis]
+redis
+gunicorn
+python-dotenv
+pandas
+numpy
+prophet; extra == "prophet"  # note: install prophet in env where compiled deps available
+channels
+channels-redis

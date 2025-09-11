@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FinSightAI - Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="/static/img/favicon_v2.svg">
+  <style>
+    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); border-radius: 12px; padding: 1rem; }
+    body.dark { background-color: #0b1220; color: #e6eef8; }
+  </style>
+</head>
+<body class="">
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="/static/img/logo_v2.svg" style="height:28px; margin-right:8px"/> FinSightAI</a>
+    <div class="d-flex align-items-center">
+      <button id="darkToggle" class="btn btn-outline-secondary me-2">🌙</button>
+      <button id="muteToggle" class="btn btn-outline-secondary me-2">🔊</button>
+      <a href="/admin/" class="btn btn-primary">Admin</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-6">
+  <div class="row g-4">
+    <div class="col-md-8">
+      <div class="glass">
+        <h3>Forecast</h3>
+        <canvas id="forecastChart" height="200"></canvas>
+      </div>
+      <div class="mt-4 glass">
+        <h4>Expenses</h4>
+        <ul id="expensesList" class="list-group"></ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="glass mb-3">
+        <h5>Budget Progress</h5>
+        <canvas id="budgetDonut" width="200" height="200"></canvas>
+      </div>
+      <div class="glass">
+        <h5>Task Monitor</h5>
+        <div id="tasksTimeline">No tasks yet.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Toaster -->
+<div id="toaster" style="position: fixed; right: 20px; bottom: 20px; z-index: 9999;"></div>
+
+<!-- Audio placeholders -->
+<audio id="soundSuccess" preload="auto"><source src="/static/sounds/chime_success.mp3" type="audio/mpeg"></audio>
+<audio id="soundWarning" preload="auto"><source src="/static/sounds/ping_warning.mp3" type="audio/mpeg"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/js/ui_helpers.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Dark mode toggle
+  const darkToggle = document.getElementById('darkToggle');
+  function applyMode(isDark){
+    document.body.classList.toggle('dark', isDark);
+    localStorage.setItem('darkMode', isDark ? '1' : '0');
+  }
+  applyMode(localStorage.getItem('darkMode') === '1');
+  darkToggle.onclick = () => applyMode(document.body.classList.toggle('dark'));
+
+  // Mute toggle
+  const muteToggle = document.getElementById('muteToggle');
+  function setMuted(m){
+    localStorage.setItem('muted', m ? '1' : '0');
+    document.getElementById('soundSuccess').muted = m;
+    document.getElementById('soundWarning').muted = m;
+  }
+  setMuted(localStorage.getItem('muted')==='1');
+  muteToggle.onclick = () => setMuted(localStorage.getItem('muted')!=='1');
+
+  // Sample charts
+  const ctx = document.getElementById('forecastChart').getContext('2d');
+  window.forecastChart = new Chart(ctx, { type:'line', data:{
+    labels:['Jan','Feb','Mar','Apr','May','Jun'],
+    datasets:[{label:'Expenses', data:[1200,1300,1250,1400,1600,1500], fill:true}]
+  }});
+
+  const donutCtx = document.getElementById('budgetDonut').getContext('2d');
+  new Chart(donutCtx, { type:'doughnut', data:{
+    labels:['Spent','Remaining'],
+    datasets:[{data:[650,1350]}]
+  }});
+
+  // Connect websocket to receive demo task updates
+  try {
+    const ws = new WebSocket((location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host + '/ws/tasks/');
+    ws.onopen = () => console.log('WS connected');
+    ws.onmessage = (evt) => {
+      const msg = JSON.parse(evt.data);
+      const tdiv = document.getElementById('tasksTimeline');
+      tdiv.innerText = JSON.stringify(msg);
+      if(msg.type === 'task.update') {
+        window.showToast('Task update: ' + JSON.stringify(msg.data), 'info', true);
+      }
+    };
+  } catch(e){ console.warn('WS init failed', e); }
+
+  // Demo toast triggers (simulate overspend)
+  setTimeout(()=>{ window.showToast('Warning: forecast predicts overspending','warning', true); }, 2000);
+});
+</script>
+</body>
+</html>

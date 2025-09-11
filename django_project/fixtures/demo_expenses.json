@@ -1,0 +1,442 @@
+[
+  {
+    "model": "expenses.expense",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "amount": "428.39",
+      "category": "Entertainment",
+      "timestamp": "2025-09-08T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "amount": "246.16",
+      "category": "Bills",
+      "timestamp": "2025-09-01T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "amount": "81.49",
+      "category": "Bills",
+      "timestamp": "2025-08-25T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "amount": "496.07",
+      "category": "Entertainment",
+      "timestamp": "2025-08-18T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "amount": "133.42",
+      "category": "Transport",
+      "timestamp": "2025-08-11T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "amount": "404.51",
+      "category": "Transport",
+      "timestamp": "2025-08-04T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "amount": "353.79",
+      "category": "Shopping",
+      "timestamp": "2025-07-28T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "amount": "366.11",
+      "category": "Transport",
+      "timestamp": "2025-07-21T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 9,
+    "fields": {
+      "user": 2,
+      "amount": "74.73",
+      "category": "Food",
+      "timestamp": "2025-09-08T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 10,
+    "fields": {
+      "user": 2,
+      "amount": "391.84",
+      "category": "Transport",
+      "timestamp": "2025-09-01T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 11,
+    "fields": {
+      "user": 2,
+      "amount": "367.42",
+      "category": "Transport",
+      "timestamp": "2025-08-25T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 12,
+    "fields": {
+      "user": 2,
+      "amount": "102.91",
+      "category": "Bills",
+      "timestamp": "2025-08-18T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 13,
+    "fields": {
+      "user": 2,
+      "amount": "118.22",
+      "category": "Transport",
+      "timestamp": "2025-08-11T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 14,
+    "fields": {
+      "user": 2,
+      "amount": "129.54",
+      "category": "Food",
+      "timestamp": "2025-08-04T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 15,
+    "fields": {
+      "user": 2,
+      "amount": "432.66",
+      "category": "Food",
+      "timestamp": "2025-07-28T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 16,
+    "fields": {
+      "user": 2,
+      "amount": "153.57",
+      "category": "Entertainment",
+      "timestamp": "2025-07-21T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 17,
+    "fields": {
+      "user": 3,
+      "amount": "477.7",
+      "category": "Bills",
+      "timestamp": "2025-09-08T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 18,
+    "fields": {
+      "user": 3,
+      "amount": "171.23",
+      "category": "Food",
+      "timestamp": "2025-09-01T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 19,
+    "fields": {
+      "user": 3,
+      "amount": "244.94",
+      "category": "Bills",
+      "timestamp": "2025-08-25T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 20,
+    "fields": {
+      "user": 3,
+      "amount": "392.16",
+      "category": "Entertainment",
+      "timestamp": "2025-08-18T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 21,
+    "fields": {
+      "user": 3,
+      "amount": "438.12",
+      "category": "Entertainment",
+      "timestamp": "2025-08-11T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 22,
+    "fields": {
+      "user": 3,
+      "amount": "243.67",
+      "category": "Shopping",
+      "timestamp": "2025-08-04T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 23,
+    "fields": {
+      "user": 3,
+      "amount": "160.98",
+      "category": "Shopping",
+      "timestamp": "2025-07-28T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 24,
+    "fields": {
+      "user": 3,
+      "amount": "101.11",
+      "category": "Food",
+      "timestamp": "2025-07-21T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 25,
+    "fields": {
+      "user": 4,
+      "amount": "255.31",
+      "category": "Shopping",
+      "timestamp": "2025-09-08T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 26,
+    "fields": {
+      "user": 4,
+      "amount": "190.95",
+      "category": "Shopping",
+      "timestamp": "2025-09-01T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 27,
+    "fields": {
+      "user": 4,
+      "amount": "148.44",
+      "category": "Shopping",
+      "timestamp": "2025-08-25T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 28,
+    "fields": {
+      "user": 4,
+      "amount": "488.13",
+      "category": "Bills",
+      "timestamp": "2025-08-18T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 29,
+    "fields": {
+      "user": 4,
+      "amount": "105.36",
+      "category": "Food",
+      "timestamp": "2025-08-11T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 30,
+    "fields": {
+      "user": 4,
+      "amount": "476.36",
+      "category": "Transport",
+      "timestamp": "2025-08-04T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 31,
+    "fields": {
+      "user": 4,
+      "amount": "306.43",
+      "category": "Shopping",
+      "timestamp": "2025-07-28T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 32,
+    "fields": {
+      "user": 4,
+      "amount": "170.69",
+      "category": "Bills",
+      "timestamp": "2025-07-21T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 33,
+    "fields": {
+      "user": 5,
+      "amount": "68.97",
+      "category": "Shopping",
+      "timestamp": "2025-09-08T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 34,
+    "fields": {
+      "user": 5,
+      "amount": "159.82",
+      "category": "Entertainment",
+      "timestamp": "2025-09-01T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 35,
+    "fields": {
+      "user": 5,
+      "amount": "389.0",
+      "category": "Entertainment",
+      "timestamp": "2025-08-25T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 36,
+    "fields": {
+      "user": 5,
+      "amount": "462.37",
+      "category": "Entertainment",
+      "timestamp": "2025-08-18T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 37,
+    "fields": {
+      "user": 5,
+      "amount": "487.57",
+      "category": "Bills",
+      "timestamp": "2025-08-11T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 38,
+    "fields": {
+      "user": 5,
+      "amount": "86.93",
+      "category": "Food",
+      "timestamp": "2025-08-04T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 39,
+    "fields": {
+      "user": 5,
+      "amount": "276.64",
+      "category": "Transport",
+      "timestamp": "2025-07-28T16:49:15.041359",
+      "notes": ""
+    }
+  },
+  {
+    "model": "expenses.expense",
+    "pk": 40,
+    "fields": {
+      "user": 5,
+      "amount": "379.32",
+      "category": "Food",
+      "timestamp": "2025-07-21T16:49:15.041359",
+      "notes": ""
+    }
+  }
+]

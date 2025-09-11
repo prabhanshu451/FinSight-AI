@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./django_project
+    command: daphne -b 0.0.0.0 -p 8000 django_project.routing:application
+    volumes:
+      - ./django_project:/app
+      - ./static:/app/static
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "8000:8000"
+
+  fastapi:
+    build: ./fastapi_app
+    command: uvicorn fastapi_app.main:app --host 0.0.0.0 --port 8001 --reload
+    volumes:
+      - ./fastapi_app:/app
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "8001:8001"
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: finsight
+      POSTGRES_USER: finsight
+      POSTGRES_PASSWORD: example
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  celery:
+    build: ./django_project
+    command: celery -A django_project worker --loglevel=info
+    volumes:
+      - ./django_project:/app
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+      - db
+
+  celery-beat:
+    build: ./django_project
+    command: celery -A django_project beat --loglevel=info --pidfile=/tmp/celerybeat.pid
+    volumes:
+      - ./django_project:/app
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+      - db
+
+  flower:
+    image: mher/flower
+    command: flower --broker=redis://redis:6379/0 --port=5555
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+
+volumes:
+  pgdata:
